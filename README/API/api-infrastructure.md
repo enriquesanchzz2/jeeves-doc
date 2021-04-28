@@ -1,0 +1,50 @@
+# Jeeves Project Structure and Cloud Architecture
+
+## Table of Contents
+
+- [1. Project Structure](#1-project-structure)
+- [2. Cloud Components](#2-cloud-components)
+
+
+
+## 1. Project Structure
+
+Jeeves project structure:
+
+```
+.
+│ env - The available environment configurations.
+│
+│ terraform - The Jenkins and Terraform scripts for deployment.
+│
+│ jeeves_home
+│
+├── jeeves.core  - The shared business logic and utilities.
+│
+├── jeeves.tests
+│   ├── src/main
+│   │   ├── jeeves.tests.SimulationWorker
+│   │   │   The entry point when a testcase is launched. In charge of:
+│   │   │   (1) Loading the testcase data to the filesystem.
+│   │   │   (2) Running the testcase.
+│   │   │   (3) Storing the report and statistics.
+│   │
+│   ├── src/test - The Gatling code for the testcases.
+│   │
+│   └── config   - The Jeeves configuration for the testcases.
+│
+├── jeeves.api
+│   ├── src/main/scala
+│   │   ├── jeeves.api.Routes     - These routes expose the Jeeves functionality.
+│   │   ├── jeeves.content.Routes - These routes expose content files, such as reports.
+│   │
+│   └── src/main/webapp
+│   │   ├── swagger/v2/swagger.json - Documentation for the API Routes.
+
+```
+
+## 2. Cloud Components
+
+With the Spot Agent, Jeeves launches testcases in your AWS VPC:
+
+![jeeves 4 4 0 - run agent_ spot](https://github.dowjones.net/storage/user/1457/files/722f7942-e73a-11e8-85b1-17dcb3835234)
