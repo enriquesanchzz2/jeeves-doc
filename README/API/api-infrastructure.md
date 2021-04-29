@@ -1,13 +1,9 @@
-# Jeeves Project Structure and Cloud Architecture
-
-## Table of Contents
-
-- [1. Project Structure](#1-project-structure)
-- [2. Cloud Components](#2-cloud-components)
+# Jeeves Structure and Cloud Architecture
+Jeeves is built on top of the Gatling Open Source Library, and it implements AWS Elastic Beanstalk for running the Test Cases. 
 
 
-
-## 1. Project Structure
+## Project Structure
+Thi section presents an script with the structure of a Jeeves Project. 
 
 Jeeves project structure:
 
@@ -45,6 +41,7 @@ Jeeves project structure:
 
 ## 2. Cloud Components
 
-With the Spot Agent, Jeeves launches testcases in your AWS VPC:
+With the Spot Agent, Jeeves launches testcases in an AWS VPC
+The image presents the AWS structure of Jeeves.
 
 ![jeeves 4 4 0 - run agent_ spot](https://github.dowjones.net/storage/user/1457/files/722f7942-e73a-11e8-85b1-17dcb3835234)
